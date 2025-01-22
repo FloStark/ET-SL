@@ -876,4 +876,13 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     .about-content, .profiles-content, .portfolio-content, .contact {
         padding: 0 15px;
     }
+    .navbar-brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #navbar-logo {
+        max-height: 50px;
+        width: auto;
+    }
 }
