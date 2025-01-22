@@ -844,48 +844,45 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 
 /* Ensure proper alignment and responsiveness for mobile devices */
 @media (max-width: 767px) {
-    body {
-        padding: 0 15px;
-    }
-    .container {
-        width: 100%;
-        padding: 0 15px;
-        margin: 0 auto;
-    }
     .navbar-header {
-        width: auto;
-        display: inline-block;
-        vertical-align: middle;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        padding: 10px 15px !important;
     }
-    .navbar-collapse {
-        width: auto;
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .navbar-nav {
-        width: 100%;
-        text-align: center;
-    }
-    .navbar-nav > li {
-        display: inline-block;
-        float: none;
-    }
-    .navbar-nav > li > a {
-        padding: 10px 15px;
-    }
-    .header-text {
-        padding: 0 15px;
-    }
-    .about-content, .profiles-content, .portfolio-content, .contact {
-        padding: 0 15px;
-    }
+
     .navbar-brand {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+        order: 1;
+        float: left !important;
     }
+
     #navbar-logo {
-        max-height: 50px;
-        width: auto;
+        max-height: 40px !important;
+        width: auto !important;
+    }
+
+    .navbar-toggle {
+        margin: 0 !important;
+        padding: 9px 10px !important;
+        order: 2;
+        float: right !important;
+    }
+}
+
+/* Ensure the logo stays within bounds on desktop */
+@media (min-width: 768px) {
+    .navbar-brand {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+    }
+
+    #navbar-logo {
+        max-height: 50px !important;
+        width: auto !important;
     }
 }
