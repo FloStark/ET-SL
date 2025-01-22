@@ -853,11 +853,14 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
         margin: 0 auto;
     }
     .navbar-header {
-        width: 100%;
-        text-align: center;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
     }
     .navbar-collapse {
-        width: 100%;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
     }
     .navbar-nav {
         width: 100%;
