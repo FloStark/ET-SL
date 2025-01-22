@@ -110,11 +110,11 @@
 
 			        <div class="container">
 
-			            <!-- Start Header Navigation -->
-			            <div class="navbar-header">
-			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-			                    <i class="fa fa-bars"></i>
-			                </button>
+						<!-- Start Header Navigation -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+								<i class="fa fa-bars"></i>
+							</button>
 							<a class="navbar-brand" href="index.html" id="navbar-logo-container">
 								<img src="assets/images/about/logo.png" class="img-responsive" style="max-height: 50px;" id="navbar-logo">
 							</a>
@@ -126,15 +126,18 @@
 										logo.style.maxHeight = '50px';
 										logoContainer.style.textAlign = 'center';
 										logoContainer.style.width = '100%';
+										logoContainer.style.margin = '0'; // Remove margin to avoid extra space
 									} else {
 										logo.style.maxHeight = '50px';
 										logoContainer.style.textAlign = 'left';
 										logoContainer.style.width = 'auto';
+										logoContainer.style.margin = '0'; // Remove margin to avoid extra space
 									}
 								}
 								window.addEventListener('resize', adjustLogo);
 								window.addEventListener('load', adjustLogo);
 							</script>
+						</div><!--/.navbar-header-->
 			            </div><!--/.navbar-header-->
 			            <!-- End Header Navigation -->
 
@@ -165,7 +168,7 @@
 					<div class="col-md-12 text-center">
 						<div class="header-text">
 							<h2>hi <span>,</span> <br> Wir sind <br> Elektrotechnik Schöcklland <span>.</span>   </h2>
-							<p>Ihr lokaler Elektrotechniker und Photovoltaik-Experte</p>
+							<p>Ihr lokaler Elektrotechniker und Photovoltaik-Experte<br>aus St. Radegund bei Graz</p>
 						</div><!--/.header-text-->
 					</div><!--/.col-->
 				</div><!-- /.row-->
