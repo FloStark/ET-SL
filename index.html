@@ -49,7 +49,7 @@
                     padding: 0 15px;
                 }
                 .container {
-                    width: 100%;
+                    width: 100% !important;
                     padding: 0 15px;
                     margin: 0 auto;
                 }
@@ -76,6 +76,15 @@
                 }
                 .about-content, .profiles-content, .portfolio-content, .contact {
                     padding: 0 15px;
+                }
+                .navbar-brand {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                #navbar-logo {
+                    max-height: 50px;
+                    width: auto;
                 }
             }
         </style>
@@ -161,6 +170,17 @@
 					</div><!--/.col-->
 				</div><!-- /.row-->
 			</div><!-- /.container-->
+			<style>
+				@media (max-width: 767px) {
+					.header-text h2 {
+						font-size: 24px;
+						line-height: 1.2;
+					}
+					.header-text p {
+						font-size: 16px;
+					}
+				}
+			</style>
 
 		</section><!--/.welcome-hero-->
 		<!--welcome-hero end -->
