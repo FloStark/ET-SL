@@ -87,6 +87,46 @@
                     width: auto;
                 }
             }
+
+            /* Mobile navbar fixes */
+            @media (max-width: 767px) {
+                .navbar-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 10px 15px;
+                }
+
+                .navbar-toggle {
+                    margin: 0;
+                    padding: 9px 10px;
+                    order: 2;
+                }
+
+                .navbar-brand {
+                    margin: 0;
+                    padding: 0;
+                    order: 1;
+                    float: none;
+                }
+
+                #navbar-logo {
+                    max-height: 40px;
+                    width: auto;
+                    vertical-align: middle;
+                }
+
+                .navbar-collapse {
+                    clear: both;
+                    width: 100%;
+                }
+
+                .navbar-default.bootsnav .navbar-toggle {
+                    float: none;
+                    margin-top: 0;
+                }
+            }
         </style>
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
