@@ -25,16 +25,27 @@
      Mobile navigation
      ---------------------------------------------------------------- */
   const mobileToggle = document.getElementById('mobile-nav-toggle');
+  const mobileClose = document.getElementById('mobile-nav-close');
   const mainNav = document.getElementById('main-nav');
 
   function openMobileNav() {
-    if (mainNav) mainNav.classList.add('open');
+    if (!mainNav) return;
+    mainNav.classList.add('open');
+    if (mobileToggle) mobileToggle.style.display = 'none';
+    if (mobileClose) mobileClose.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
 
   function closeMobileNav() {
-    if (mainNav) mainNav.classList.remove('open');
+    if (!mainNav) return;
+    mainNav.classList.remove('open');
+    if (mobileToggle) mobileToggle.style.display = '';
+    if (mobileClose) mobileClose.style.display = 'none';
     document.body.style.overflow = '';
+    // Close any open dropdowns
+    document.querySelectorAll('#main-nav .dropdown.open').forEach(function (d) {
+      d.classList.remove('open');
+    });
   }
 
   if (mobileToggle) {
@@ -47,13 +58,12 @@
     });
   }
 
-  // Close button inside nav
-  const mobileClose = document.getElementById('mobile-nav-close');
+  // Close button
   if (mobileClose) {
     mobileClose.addEventListener('click', closeMobileNav);
   }
 
-  // Close when clicking backdrop
+  // Close when clicking backdrop (the semi-transparent overlay behind the panel)
   if (mainNav) {
     mainNav.addEventListener('click', function (e) {
       if (e.target === mainNav) {
@@ -62,9 +72,37 @@
     });
   }
 
-  // Close on nav link click
+  // Close on nav link click (but NOT dropdown parent links)
   document.querySelectorAll('#main-nav .nav-links a').forEach(function (link) {
+    // Skip the dropdown parent link — that should toggle the submenu, not close nav
+    if (link.parentElement && link.parentElement.classList.contains('dropdown')) return;
     link.addEventListener('click', closeMobileNav);
+  });
+
+  // Also close on dropdown sub-link click
+  document.querySelectorAll('#main-nav .dropdown-menu a').forEach(function (link) {
+    link.addEventListener('click', closeMobileNav);
+  });
+
+  /* ----------------------------------------------------------------
+     Mobile dropdown toggle (no hover on touch devices)
+     ---------------------------------------------------------------- */
+  document.querySelectorAll('#main-nav .dropdown > a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      // Only intercept on mobile (when the mobile nav panel is open)
+      if (!mainNav || !mainNav.classList.contains('open')) return;
+      e.preventDefault();
+      var parent = this.parentElement;
+      var wasOpen = parent.classList.contains('open');
+      // Close all other dropdowns
+      document.querySelectorAll('#main-nav .dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+      });
+      // Toggle this one
+      if (!wasOpen) {
+        parent.classList.add('open');
+      }
+    });
   });
 
   /* ----------------------------------------------------------------

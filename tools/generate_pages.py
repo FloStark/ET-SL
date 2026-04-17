@@ -50,34 +50,38 @@ template_top = """<!DOCTYPE html>
   </script>
 </head>
 <body>
+  <!-- Mobile Nav Panel (Outside header for full-height viewport positioning) -->
+  <nav class="main-nav" id="main-nav">
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li class="dropdown">
+        <a href="index.html#leistungen">Leistungen</a>
+        <div class="dropdown-menu">
+          <a href="photovoltaik.html">Photovoltaik &amp; Speicher</a>
+          <a href="elektroinstallation.html">Elektroinstallation &amp; Smart Home</a>
+          <a href="e-mobilitaet.html">E-Mobilität</a>
+        </div>
+      </li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="karriere.html">Karriere</a></li>
+      <li><a href="index.html#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+  <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Menü schließen">
+    <i class="bi bi-x-lg"></i>
+  </button>
+
   <!-- ==================== Header ==================== -->
   <header class="site-header" id="header">
     <div class="container">
       <a href="index.html" class="logo">
         <img src="assets/img/logo.png" alt="Elektrotechnik Schöcklland ET-SL GmbH Logo">
       </a>
-      <nav class="main-nav" id="main-nav">
-        <ul class="nav-links">
-          <li><a href="index.html">Start</a></li>
-          <li class="dropdown">
-            <a href="index.html#leistungen">Leistungen</a>
-            <div class="dropdown-menu">
-              <a href="photovoltaik.html">Photovoltaik &amp; Speicher</a>
-              <a href="elektroinstallation.html">Elektroinstallation &amp; Smart Home</a>
-              <a href="e-mobilitaet.html">E-Mobilität</a>
-            </div>
-          </li>
-          <li><a href="ueber-uns.html">Über uns</a></li>
-          <li><a href="karriere.html">Karriere</a></li>
-          <li><a href="index.html#contact">Kontakt</a></li>
-        </ul>
-      </nav>
+
       <a class="btn btn-primary header-cta" href="index.html#contact">Kontaktiere uns</a>
+
       <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menü öffnen">
         <i class="bi bi-list"></i>
-      </button>
-      <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Menü schließen" style="display:none;">
-        <i class="bi bi-x-lg"></i>
       </button>
     </div>
   </header>

@@ -537,7 +537,7 @@ p:last-child {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 80px var(--space-xl) var(--space-xl);
+    padding: 60px var(--space-xl) var(--space-xl);
     background: var(--color-white);
     box-shadow: var(--shadow-xl);
     transform: translateX(100%);
@@ -551,7 +551,7 @@ p:last-child {
 
   .nav-links a {
     font-size: var(--font-size-base);
-    padding: 14px 16px;
+    padding: 10px 16px;
     border-radius: var(--radius-sm);
   }
 
