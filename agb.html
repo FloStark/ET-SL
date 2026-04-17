@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AGB | Elektrotechnik Schöcklland – ET-SL GmbH</title>
   <meta name="description"
     content="Allgemeine Geschäftsbedingungen (AGB) der ET-SL GmbH (Elektrotechnik Schöcklland) für Elektrotechnik-Dienstleistungen. Stand Januar 2021.">
@@ -15,67 +15,102 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-    rel="stylesheet">
+  <link href="assets/img/favicon.ico" rel="icon">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
+  <!-- AOS -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-
+  <!-- Breadcrumb JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://et-sl.at/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Allgemeine Geschäftsbedingungen",
+      "item": "https://et-sl.at/agb.html"
+    }]
+  }
+  </script>
 </head>
 
-<body class="index-page">
+  <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
         <img src="assets/img/logo.png" alt="Elektrotechnik Schöcklland ET-SL GmbH Logo">
-        <!-- <h1 class="sitename">Elektrotechnik Schöcklland</h1>-->
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html#start" class="active">Start</a></li>
-          <li><a href="index.html#about">Über uns</a></li>
-          <li><a href="index.html#leistungen">Was wir tun</a></li>
-          <li><a href="index.html#portfolio">Referenzen</a></li>
-          <li><a href="index.html#team">Team</a></li>
-
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html" title="Zur Startseite von ET-SL">Start</a></li>
+          <li class="dropdown">
+            <a href="index.html#leistungen" title="Unsere Elektrotechnik-Leistungen im Überblick">Leistungen</a>
+            <div class="dropdown-menu">
+              <a href="photovoltaik.html" title="Mehr über Photovoltaik und Stromspeicher erfahren">Photovoltaik &amp; Speicher</a>
+              <a href="elektroinstallation.html" title="Alles über Elektroinstallation und Smart Home erfahren">Elektroinstallation &amp; Smart Home</a>
+              <a href="e-mobilitaet.html" title="Informationen zu Ladestationen und E-Mobilität">E-Mobilität</a>
+            </div>
+          </li>
+          <li><a href="ueber-uns.html" title="Lernen Sie die ET-SL GmbH und unser Team kennen">Über uns</a></li>
+          <li><a href="karriere.html" title="Werden Sie Teil unseres Teams - Offene Stellen">Karriere</a></li>
+          <li><a href="index.html#contact" title="Nehmen Sie Kontakt mit uns auf">Kontakt</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#contact">Kontaktiere uns</a>
+      <a class="btn btn-primary header-cta" href="index.html#contact" title="Jetzt unverbindlich Kontakt aufnehmen">Kontaktiere uns</a>
 
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menü öffnen">
+        <i class="bi bi-list"></i>
+      </button>
+      <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Menü schließen" style="display:none;">
+        <i class="bi bi-x-lg"></i>
+      </button>
     </div>
   </header>
 
-  <main class="main">
+  <!-- Visual Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Startseite</a>
+        <span class="separator"><i class="bi bi-chevron-right"></i></span>
+        <span class="current">Allgemeine Geschäftsbedingungen</span>
+      </div>
+    </div>
+  </nav>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+  <main id="main-content">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span>AGB<br></span>
-        <h2>AGB</h2>
+    <!-- Page Title -->
+    <section class="page-title-section" style="padding: var(--space-2xl) 0 0 0;">
+      <div class="container">
+        <h1>Allgemeine Geschäftsbedingungen</h1>
+      </div>
+    </section>
 
-        <p><strong>AGB Elektrotechniker </strong><br /> Stand Januar 2021</p>
+    <!-- Legal Content -->
+    <section class="legal-content">
+      <div class="container" data-aos="fade-up">
+
+        <p><strong>AGB Elektrotechniker</strong><br>Stand Januar 2021</p>
+
         <ol>
-          <li><strong><u>Geltung </u></strong>
+          <li><strong><u>Geltung</u></strong>
             <ul>
               <li>Diese Gesch&auml;ftsbedingungen gelten zwischen uns (ET-SL GmbH) und nat&uuml;rlichen und juristischen
                 Personen (kurz Kunde) f&uuml;r das gegenst&auml;ndliche Rechtsgesch&auml;ft sowie gegen&uuml;ber
@@ -93,7 +128,7 @@
                 uns nicht ausdr&uuml;cklich <strong>widersprechen</strong>.</li>
             </ul>
           </li>
-          <li><strong><u>Angebot/Vertragsabschluss </u></strong>
+          <li><strong><u>Angebot/Vertragsabschluss</u></strong>
             <ul>
               <li>Unsere Angebote sind <strong>unverbindlich</strong>.</li>
               <li><strong>Zusagen</strong>, Zusicherungen und Garantien unsererseits oder von diesen AGB abweichende
@@ -112,7 +147,7 @@
                 gegenst&auml;ndlichen Rechnung das Entgelt f&uuml;r den Kostenvoranschlag gutgeschrieben</li>
             </ul>
           </li>
-          <li><strong><u>Preise </u></strong>
+          <li><strong><u>Preise</u></strong>
             <ul>
               <li>Preisangaben sind grunds&auml;tzlich <strong>nicht </strong>als <strong>Pauschalpreis </strong>zu
                 verstehen.</li>
@@ -165,7 +200,7 @@
                 in der Verantwortung des Kunden.</li>
             </ul>
           </li>
-          <li><strong><u>Zahlung </u></strong>
+          <li><strong><u>Zahlung</u></strong>
             <ul>
               <li>Ein <strong>Drittel des Entgeltes </strong>wird bei Vertragsabschluss, ein Drittel bei Leistungsbeginn
                 und der Rest nach Leistungsfertigstellung f&auml;llig.</li>
@@ -199,7 +234,7 @@
                 Forderung steht.</li>
             </ul>
           </li>
-          <li><strong><u>Bonit&auml;tspr&uuml;fung </u></strong>
+          <li><strong><u>Bonit&auml;tspr&uuml;fung</u></strong>
             <ul>
               <li>Der Kunde erkl&auml;rt sein ausdr&uuml;ckliches Einverst&auml;ndnis, dass seine Daten
                 ausschlie&szlig;lich zum Zwecke des Gl&auml;ubigerschutzes an die staatlich bevorrechteten
@@ -208,7 +243,7 @@
                 (ISA) und Kreditschutzverband von 1870(KSV) &uuml;bermittelt werden d&uuml;rfen.</li>
             </ul>
           </li>
-          <li><strong><u>Mitwirkungspflichten des Kunden </u></strong>
+          <li><strong><u>Mitwirkungspflichten des Kunden</u></strong>
             <ul>
               <li>Unsere Pflicht zur <strong>Leistungsausf&uuml;hrung beginnt </strong>fr&uuml;hestens, sobald der Kunde
                 alle baulichen, technischen sowie rechtlichen <strong>Voraussetzungen </strong>zur Ausf&uuml;hrung
@@ -234,7 +269,7 @@
                 <strong>Energie </strong>und Wassermengen sind vom Kunden auf dessen Kosten beizustellen.</li>
               <li>Ebenso haftet der Kunde daf&uuml;r, dass die technischen Anlagen, wie etwa Zuleitungen, Verkabelungen,
                 Netzwerke und dergleichen in technisch einwandfreien und betriebsbereiten Zustand sowie mit den von uns
-                herzustellenden Werken oder Kaufgegenst&auml;nden <strong>kompatibel</strong></li>
+                herzustellenden Werken oder Kaufgegenst&auml;nden <strong>kompatibel</strong> sind.</li>
               <li>Wir sind berechtigt, aber nicht verpflichtet, diese Anlagen gegen gesondertes Entgelt zu
                 &uuml;berpr&uuml;fen.</li>
               <li>Der Kunde hat uns f&uuml;r die Zeit der Leistungsausf&uuml;hrung kostenlos <strong>versperrbare
@@ -242,7 +277,7 @@
                 und Materialien zur Verf&uuml;gung zu stellen.</li>
             </ul>
           </li>
-          <li><strong><u>Leistungsausf&uuml;hrung </u></strong>
+          <li><strong><u>Leistungsausf&uuml;hrung</u></strong>
             <ul>
               <li>Wir sind lediglich dann verpflichtet, nachtr&auml;gliche <strong>&Auml;nderungs- und
                   Erweiterungsw&uuml;nsche</strong> des Kunden zu ber&uuml;cksichtigen, wenn sie aus technischen
@@ -311,7 +346,7 @@
                 abzuschlie&szlig;en. Der Kunde genehmigt jede verkehrs&uuml;bliche Versandart.</li>
             </ul>
           </li>
-          <li><strong><u>Annahmeverzug </u></strong>
+          <li><strong><u>Annahmeverzug</u></strong>
             <ul>
               <li>Ger&auml;t der Kunde l&auml;nger als eine Wochen in Annahmeverzug (Verweigerung der Annahme, Verzug
                 mit Vorleistungen oder anders), und hat der Kunde trotz angemessener Nachfristsetzung nicht f&uuml;r die
@@ -329,7 +364,7 @@
                 Verbrauchern besteht dieses Recht nur, wenn es im Einzelfall ausgehandelt wird.</li>
             </ul>
           </li>
-          <li><strong><u>Eigentumsvorbehalt </u></strong>
+          <li><strong><u>Eigentumsvorbehalt</u></strong>
             <ul>
               <li>Die von uns gelieferte, montierte oder sonst &uuml;bergebene Ware bleibt bis zur vollst&auml;ndigen
                 Bezahlung unser Eigentum.</li>
@@ -375,7 +410,7 @@
                 <strong>Kostenvorsch&uuml;sse </strong>zu verlangen</li>
             </ul>
           </li>
-          <li><strong><u>Unser geistiges Eigentum </u></strong>
+          <li><strong><u>Unser geistiges Eigentum</u></strong>
             <ul>
               <li><strong>Pl&auml;ne</strong>, Skizzen, Kostenvoranschl&auml;ge und sonstige Unterlagen, die von uns
                 beigestellt oder durch unseren Beitrag entstanden sind, bleiben unser geistiges Eigentum.</li>
@@ -420,9 +455,7 @@
                 genehmigt.</li>
               <li>Die mangelhafte Lieferung oder Proben davon sind &ndash; sofern wirtschaftlich vertretbar &ndash; vom
                 unternehmerischen Kunden an uns zu <strong>retournieren</strong>. Im Zusammenhang mit der
-                M&auml;ngelbehebung entstehende Transport- und Fahrtkosten gehen zu Lasten des Kunden. Die mangelhafte
-                Lieferung oder Proben davon sind &ndash; sofern wirtschaftlich vertretbar &ndash; vom unternehmerischen
-                Kunden an uns zu retournieren.</li>
+                M&auml;ngelbehebung entstehende Transport- und Fahrtkosten gehen zu Lasten des Kunden.</li>
               <li>Den Kunden trifft die Obliegenheit, eine <strong>unverz&uuml;gliche Mangelfeststellung </strong>durch
                 uns zu erm&ouml;glichen.</li>
               <li>Die Gew&auml;hrleistung ist ausgeschlossen, wenn die technischen Anlagen des Kunden wie etwa
@@ -435,7 +468,7 @@
                 der Kunde seinen Mitwirkungspflichten gem&auml;&szlig; Punkt 7. nicht nachkommt.</li>
             </ul>
           </li>
-          <li><strong><u>Haftung </u></strong>
+          <li><strong><u>Haftung</u></strong>
             <ul>
               <li>Wegen Verletzung vertraglicher oder vorvertraglicher Pflichten, insbesondere wegen Unm&ouml;glichkeit,
                 Verzug etc. haften wir bei <strong>Verm&ouml;genssch&auml;den </strong>nur in F&auml;llen von Vorsatz
@@ -468,11 +501,13 @@
           </li>
           <li><strong><u>Salvatorische Klausel</u></strong></li>
         </ol>
+
         <p>17.1. Sollten einzelne Teile dieser AGB unwirksam sein, so wird dadurch die <strong>G&uuml;ltigkeit
           </strong>der &uuml;brigen Teile nicht ber&uuml;hrt.</p>
         <p>17.2. Wir, wie ebenso wie der unternehmerische Kunde, verpflichten uns jetzt schon, gemeinsam &ndash;
           ausgehend vom Horizont redlicher Vertragsparteien &ndash; eine <strong>Ersatzregelung </strong>zu treffen, die
           dem wirtschaftlichen Ergebnis der unwirksamen Bedingung am n&auml;chsten kommt.</p>
+
         <ol start="19">
           <li><strong><u>Allgemeines</u></strong>
             <ul>
@@ -488,32 +523,28 @@
             </ul>
           </li>
         </ol>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-      </div><!-- End Section Title -->
 
+      </div>
+    </section>
 
   </main>
 
-  <footer id="footer" class="footer">
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
 
-
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">ET-SL GmbH</span>
-          </a>
-          <div class="footer-contact pt-3">
+        <div class="footer-about">
+          <a href="index.html" class="footer-brand">ET-SL GmbH</a>
+          <div class="footer-contact-info">
             <p>Grazer Straße 63</p>
             <p>8061 St. Radegund bei Graz</p>
-            <p class="mt-3"><strong>Telefon:</strong> <span>0664 4120512</span></p>
-            <p><strong>Email:</strong> <span>office@et-sl.at</span></p>
+            <p style="margin-top: 12px;"><strong>Telefon:</strong> <a href="tel:+436644120512">0664 4120512</a></p>
+            <p><strong>Email:</strong> <a href="mailto:office@et-sl.at">office@et-sl.at</a></p>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
+        <div class="footer-links">
           <h4>Wissenswertes</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="impressum.html">Impressum</a></li>
@@ -522,39 +553,27 @@
           </ul>
         </div>
 
+      </div>
 
-
-
+      <div class="footer-bottom">
+        <p>© 2026 <strong>ET-SL GmbH</strong> – Alle Rechte vorbehalten.</p>
+        <div class="murix-credits">
+          Made by <a href="https://murix.at" target="_blank">Murix.at</a>
+        </div>
       </div>
     </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© 2026 <strong class="px-1 sitename">ET-SL GmbH</strong> – Alle Rechte vorbehalten.</p>
-      <div class="murix-credits">
-        Made by <a href="https://murix.at" target="_blank">Murix.at</a>
-      </div>
-    </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top" aria-label="Nach oben scrollen">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Scripts -->
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>

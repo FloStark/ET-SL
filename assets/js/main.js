@@ -1,203 +1,216 @@
+/**
+ * ET-SL Elektrotechnik Schöcklland — Custom JS
+ * No Bootstrap required
+ */
+(function () {
+  'use strict';
 
-
-(function() {
-  "use strict";
-
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-  }
-
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
-
-  /**
-   * Mobile nav toggle
-   */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
-      }
-    });
-
-  });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
-    });
-  });
-
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
-
-  /**
-   * Scroll top button
-   */
-  let scrollTop = document.querySelector('.scroll-top');
-
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+  /* ----------------------------------------------------------------
+     Header scroll effect
+     ---------------------------------------------------------------- */
+  function handleHeaderScroll() {
+    const header = document.getElementById('header');
+    if (!header) return;
+    if (window.scrollY > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
 
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+  document.addEventListener('scroll', handleHeaderScroll, { passive: true });
+  window.addEventListener('load', handleHeaderScroll);
 
-  /**
-   * Animation on scroll function and init
-   */
-  function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+  /* ----------------------------------------------------------------
+     Mobile navigation
+     ---------------------------------------------------------------- */
+  const mobileToggle = document.getElementById('mobile-nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+
+  function openMobileNav() {
+    if (mainNav) mainNav.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
-  window.addEventListener('load', aosInit);
 
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  function closeMobileNav() {
+    if (mainNav) mainNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
-
-  /**
-   * Init isotope layout and filters
-   */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
-
-  });
-
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
-
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', function () {
+      if (mainNav && mainNav.classList.contains('open')) {
+        closeMobileNav();
       } else {
-        new Swiper(swiperElement, config);
+        openMobileNav();
       }
     });
   }
 
-  window.addEventListener("load", initSwiper);
+  // Close button inside nav
+  const mobileClose = document.getElementById('mobile-nav-close');
+  if (mobileClose) {
+    mobileClose.addEventListener('click', closeMobileNav);
+  }
 
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
-  window.addEventListener('load', function(e) {
+  // Close when clicking backdrop
+  if (mainNav) {
+    mainNav.addEventListener('click', function (e) {
+      if (e.target === mainNav) {
+        closeMobileNav();
+      }
+    });
+  }
+
+  // Close on nav link click
+  document.querySelectorAll('#main-nav .nav-links a').forEach(function (link) {
+    link.addEventListener('click', closeMobileNav);
+  });
+
+  /* ----------------------------------------------------------------
+     Scroll to top button
+     ---------------------------------------------------------------- */
+  const scrollTopBtn = document.getElementById('scroll-top');
+
+  function toggleScrollTop() {
+    if (!scrollTopBtn) return;
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('active');
+    } else {
+      scrollTopBtn.classList.remove('active');
+    }
+  }
+
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  document.addEventListener('scroll', toggleScrollTop, { passive: true });
+  window.addEventListener('load', toggleScrollTop);
+
+  /* ----------------------------------------------------------------
+     FAQ Accordion
+     ---------------------------------------------------------------- */
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const item = this.closest('.faq-item');
+      const isActive = item.classList.contains('active');
+
+      // Close all
+      document.querySelectorAll('.faq-item.active').forEach(function (openItem) {
+        openItem.classList.remove('active');
+      });
+
+      // Open clicked (if it wasn't already open)
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  /* ----------------------------------------------------------------
+     Preloader
+     ---------------------------------------------------------------- */
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    window.addEventListener('load', function () {
+      preloader.style.opacity = '0';
+      preloader.style.visibility = 'hidden';
+      setTimeout(function () {
+        preloader.remove();
+      }, 400);
+    });
+  }
+
+  /* ----------------------------------------------------------------
+     AOS Init
+     ---------------------------------------------------------------- */
+  window.addEventListener('load', function () {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+      });
+    }
+  });
+
+  /* ----------------------------------------------------------------
+     GLightbox Init
+     ---------------------------------------------------------------- */
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({ selector: '.glightbox' });
+  }
+
+  /* ----------------------------------------------------------------
+     Smooth scroll for anchor links
+     ---------------------------------------------------------------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || targetId === '#top') return; // scroll-top handled separately
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        const headerH = document.getElementById('header');
+        const offset = headerH ? headerH.offsetHeight + 16 : 80;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ----------------------------------------------------------------
+     Scrollspy — active nav link
+     ---------------------------------------------------------------- */
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  function updateScrollspy() {
+    const scrollPos = window.scrollY + 200;
+
+    navLinks.forEach(function (link) {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      // Handle both "#section" and "index.html#section"
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+      const hash = href.substring(hashIndex);
+      if (!hash || hash === '#') return;
+
+      const section = document.querySelector(hash);
+      if (!section) return;
+
+      if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+        navLinks.forEach(function (l) { l.classList.remove('active'); });
+        link.classList.add('active');
+      }
+    });
+  }
+
+  document.addEventListener('scroll', updateScrollspy, { passive: true });
+  window.addEventListener('load', updateScrollspy);
+
+  /* ----------------------------------------------------------------
+     Hash link scroll correction on page load
+     ---------------------------------------------------------------- */
+  window.addEventListener('load', function () {
     if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(function () {
+          const header = document.getElementById('header');
+          const offset = header ? header.offsetHeight + 16 : 80;
           window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
+            top: target.offsetTop - offset,
+            behavior: 'smooth',
           });
         }, 100);
       }
     }
   });
-
-  /**
-   * Navmenu Scrollspy
-   */
-  let navmenulinks = document.querySelectorAll('.navmenu a');
-
-  function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
-      }
-    })
-  }
-  window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
 
 })();

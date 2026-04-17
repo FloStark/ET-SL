@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elektrotechnik Schöcklland | ET-SL GmbH – Ihr Elektriker in St. Radegund bei Graz</title>
   <meta name="description"
     content="Elektrotechnik Schöcklland (ET-SL GmbH) – Ihr Experte für Elektroinstallation, Photovoltaik, Smart Home und Sicherheitstechnik in St. Radegund bei Graz. Neubau, Altbausanierung & Gewerbe. Jetzt Kontakt aufnehmen!">
@@ -27,23 +27,16 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
 
-  <!-- Fonts - Preconnect & Preload -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons (Bootstrap Icons – icon font only, no Bootstrap framework) -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
+  <!-- AOS Animations -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- GLightbox -->
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
 
   <!-- JSON-LD Structured Data -->
@@ -154,123 +147,166 @@
   }
   </script>
 
+  <!-- Breadcrumb JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://et-sl.at/"
+    }]
+  }
+  </script>
+
 </head>
 
-<body class="index-page">
+<body>
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+  <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
+  <!-- ==================== Header ==================== -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
         <img src="assets/img/logo.png" alt="Elektrotechnik Schöcklland ET-SL GmbH Logo">
-        <!-- <h1 class="sitename">Elektrotechnik Schöcklland</h1>-->
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#start" class="active">Start</a></li>
-          <li><a href="#about">Über uns</a></li>
-          <li><a href="#leistungen">Was wir tun</a></li>
-          <li><a href="#portfolio">Referenzen</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#faq">FAQ</a></li>
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html" title="Zur Startseite von ET-SL">Start</a></li>
+          <li class="dropdown">
+            <a href="index.html#leistungen" title="Unsere Elektrotechnik-Leistungen im Überblick">Leistungen</a>
+            <div class="dropdown-menu">
+              <a href="photovoltaik.html" title="Mehr über Photovoltaik und Stromspeicher erfahren">Photovoltaik &amp; Speicher</a>
+              <a href="elektroinstallation.html" title="Alles über Elektroinstallation und Smart Home erfahren">Elektroinstallation &amp; Smart Home</a>
+              <a href="e-mobilitaet.html" title="Informationen zu Ladestationen und E-Mobilität">E-Mobilität</a>
+            </div>
+          </li>
+          <li><a href="ueber-uns.html" title="Lernen Sie die ET-SL GmbH und unser Team kennen">Über uns</a></li>
+          <li><a href="karriere.html" title="Werden Sie Teil unseres Teams - Offene Stellen">Karriere</a></li>
+          <li><a href="index.html#contact" title="Nehmen Sie Kontakt mit uns auf">Kontakt</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#contact">Kontaktiere uns</a>
+      <a class="btn btn-primary header-cta" href="#contact" title="Jetzt unverbindlich Kontakt aufnehmen">Kontaktiere uns</a>
 
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menü öffnen">
+        <i class="bi bi-list"></i>
+      </button>
+      <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Menü schließen" style="display:none;">
+        <i class="bi bi-x-lg"></i>
+      </button>
     </div>
   </header>
 
-  <main class="main">
 
+  <!-- ==================== Main Content ==================== -->
+  <main id="main-content">
 
+    <!-- Hero Section -->
     <section id="start" class="hero section">
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
-            <img src="assets/img/Logo_final.svg" alt="Elektrotechnik Schöcklland ET-SL GmbH Logo">
-            <h1 class="visually-hidden">Elektrotechnik Schöcklland – Ihr Elektriker in St. Radegund bei Graz</h1>
-            <p>Ihr lokaler Elektrotechniker und Photovoltaik-Experte
-              aus St. Radegund bei Graz</p>
-            <div class="d-flex">
-              <a href="#contact" class="btn-get-started">Kontakt aufnehmen</a>
-            </div>
+      <!-- Subtle Technical Grid Background -->
+      <div class="hero-grid-bg"></div>
+      
+      <!-- Floating Mini Favicons -->
+      <div class="hero-floating-icons">
+        <img src="assets/img/favicon.ico" class="float-icon float-icon-1" alt="" aria-hidden="true">
+        <img src="assets/img/favicon.ico" class="float-icon float-icon-2" alt="" aria-hidden="true">
+        <img src="assets/img/favicon.ico" class="float-icon float-icon-3" alt="" aria-hidden="true">
+        <img src="assets/img/favicon.ico" class="float-icon float-icon-4" alt="" aria-hidden="true">
+        <img src="assets/img/favicon.ico" class="float-icon float-icon-5" alt="" aria-hidden="true">
+      </div>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Premium Logo Reveal -->
+          <div class="hero-brand">
+             <div class="brand-line brand-line-left"></div>
+             <img src="assets/img/Logo_final.svg" alt="Elektrotechnik Schöcklland ET-SL GmbH Logo" class="hero-logo-premium">
+             <div class="brand-line brand-line-right"></div>
           </div>
-          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="100">
-            <img src="assets/img/hero-img.png" class="img-fluid animated"
-              alt="Elektrotechniker bei der Arbeit – Elektrotechnik Schöcklland">
+          
+          <h1 class="sr-only">Elektrotechnik Schöcklland – Ihr Elektriker in St. Radegund bei Graz</h1>
+          
+          <div class="hero-text-reveal">
+            <p class="hero-subtitle-premium">
+              Präzision in <strong class="color-primary">Elektrotechnik</strong> &amp; <strong class="color-primary">Photovoltaik</strong>.
+            </p>
+          </div>
+          
+          <div class="hero-text-reveal">
+            <p class="hero-description-premium">
+              Ihr zuverlässiger Fachpartner für intelligente Gebäudeinstallation aus St. Radegund bei Graz.
+            </p>
+          </div>
+          
+          <div class="hero-cta-group-premium">
+            <a href="#contact" class="btn-premium btn-filled">
+              <span>Projekt anfragen</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="#leistungen" class="btn-premium btn-text">
+              <span>Leistungen ansehen</span>
+            </a>
           </div>
         </div>
       </div>
 
     </section>
 
+
     <!-- Featured Services Section -->
-    <section id="featured-services" class="featured-services section">
-
+    <section id="featured-services" class="section-services section">
       <div class="container">
+        <div class="services-grid">
 
-        <div class="row gy-4">
+          <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon"><i class="bi bi-plug"></i></div>
+            <h3><a href="#leistungen">Neubau, Altbausanierung und Erweiterung</a></h3>
+            <p>Wir planen und erledigen Ihre Elektroinstallation.</p>
+          </article>
 
-          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-plugin icon"></i></div>
-              <h4><a href="#leistungen" class="stretched-link">Neubau, Altbausanierung und Erweiterung</a></h4>
-              <p>Wir planen und erledigen Ihre Elektroinstallation.</p>
-            </div>
-          </div><!-- End Service Item -->
+          <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon"><i class="bi bi-sun"></i></div>
+            <h3><a href="#leistungen">Photovoltaik</a></h3>
+            <p>Sie brauchen eine Photovoltaik Anlage? Hier sind Sie bei uns genau richtig!</p>
+          </article>
 
-          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-brightness-high-fill icon"></i></div>
-              <h4><a href="#leistungen" class="stretched-link">Photovoltaik</a></h4>
-              <p>Sie brauchen eine Photovoltaik Anlage? Hier sind Sie bei uns genau richtig!</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-tools"></i></div>
-              <h4><a href="#leistungen" class="stretched-link">Instandsetzung</a></h4>
-              <p>Sei es eine Instandsetzung von Lampen, Klingeln, Steckdosen, etc. <br>Wir sind für Sie da!</p>
-            </div>
-          </div><!-- End Service Item -->
+          <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon"><i class="bi bi-tools"></i></div>
+            <h3><a href="#leistungen">Instandsetzung</a></h3>
+            <p>Sei es eine Instandsetzung von Lampen, Klingeln, Steckdosen, etc. Wir sind für Sie da!</p>
+          </article>
 
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /Featured Services Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span>Über uns<br></span>
-        <h2>Über uns</h2>
-        <p>Wir sind ein erfahrenes Team von Elektrotechnikern aus St. Radegund bei Graz. Die Firma Elektrotechnik
-          Schöcklland wurde im Jahr 2024 von Ewald Hofer übernommen und profitiert von langjähriger Erfahrung in der
-          Branche.</p>
-      </div><!-- End Section Title -->
-
+    <section id="about" class="section-about section">
       <div class="container">
 
-        <div class="row gy-4">
-          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about.jpg" class="img-fluid" loading="lazy"
-              alt="Elektrotechnik Schöcklland – Unser Team bei einer Photovoltaik-Installation in St. Radegund">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-label">Über uns</span>
+          <h2>Über uns</h2>
+          <p>Wir sind ein erfahrenes Team von Elektrotechnikern aus St. Radegund bei Graz. Die Firma Elektrotechnik
+            Schöcklland wurde im Jahr 2024 von Ewald Hofer übernommen und profitiert von langjähriger Erfahrung in der
+            Branche.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/team/team.jpeg" loading="lazy"
+              alt="Das Team von Elektrotechnik Schöcklland">
           </div>
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200" id="leistungen">
+          <div class="about-content" data-aos="fade-left" data-aos-delay="200" id="leistungen">
             <h3>Elektrotechnik Schöcklland</h3>
-            <p class="fst-italic">
-              Unsere Leistungen im Überblick
-            </p>
-            <ul>
+            <p class="about-subtitle">Unsere Leistungen im Überblick</p>
+            <ul class="check-list">
               <li><i class="bi bi-check2-all"></i> <span>Elektrotechnik</span></li>
               <li><i class="bi bi-check2-all"></i> <span>Photovoltaik und Stromspeicher</span></li>
               <li><i class="bi bi-check2-all"></i> <span>Beleuchtungsanlagen</span></li>
@@ -289,289 +325,250 @@
         </div>
 
       </div>
-
-    </section><!-- /About Section -->
-
+    </section>
 
 
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span>Referenzen</span>
-        <h2>Referenzen</h2>
-        <p>Machen Sie sich selbst ein Bild über uns.</p>
-      </div><!-- End Section Title -->
-
+    <!-- Portfolio / Referenzen Section -->
+    <section id="portfolio" class="section-portfolio section">
       <div class="container">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-label">Referenzen</span>
+          <h2>Referenzen</h2>
+          <p>Machen Sie sich selbst ein Bild über uns.</p>
+        </div>
 
+        <div class="portfolio-grid" data-aos="fade-up" data-aos-delay="200">
+          
+          <div class="portfolio-item">
+            <img src="assets/img/portfolio/pv1.JPG" loading="lazy"
+              alt="Referenzprojekt Photovoltaik-Anlage in St. Radegund – Elektrotechnik Schöcklland">
+            <div class="portfolio-overlay">
+              <h4>Photovoltaik</h4>
+              <p>Dachmontage</p>
+              <a href="assets/img/portfolio/pv1.JPG" title="Photovoltaik Installation" data-gallery="portfolio-gallery"
+                class="glightbox"><i class="bi bi-zoom-in"></i></a>
+            </div>
+          </div>
 
+          <div class="portfolio-item">
+            <img src="assets/img/portfolio/pv2.JPG" loading="lazy"
+              alt="Referenzprojekt Solaranlage – Elektrotechnik Schöcklland">
+            <div class="portfolio-overlay">
+              <h4>PV-Anlage</h4>
+              <p>Nachhaltige Energielösung</p>
+              <a href="assets/img/portfolio/pv2.JPG" title="PV-Anlage" data-gallery="portfolio-gallery"
+                class="glightbox"><i class="bi bi-zoom-in"></i></a>
+            </div>
+          </div>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/portfolio/ref1.JPG" class="img-fluid" loading="lazy"
-                alt="Referenzprojekt Photovoltaik-Anlage in St. Radegund – Elektrotechnik Schöcklland">
-              <div class="portfolio-info">
-                <h4>Referenz</h4>
-                <p>St. Radegund</p>
-                <a href="assets/img/portfolio/ref1.JPG" title="Referenz" data-gallery="portfolio-gallery-app"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!--<a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>-->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-
-
-          </div><!-- End Portfolio Container -->
+          <div class="portfolio-item">
+            <img src="assets/img/portfolio/pv_schwimmbad.JPG" loading="lazy"
+              alt="Referenzprojekt Photovoltaik Schwimmbad – Elektrotechnik Schöcklland">
+            <div class="portfolio-overlay">
+              <h4>Solaranlage</h4>
+              <p>Projekt mit Schwimmbad</p>
+              <a href="assets/img/portfolio/pv_schwimmbad.JPG" title="Solaranlage (Schwimmbad)" data-gallery="portfolio-gallery"
+                class="glightbox"><i class="bi bi-zoom-in"></i></a>
+            </div>
+          </div>
 
         </div>
 
       </div>
-
-    </section><!-- /Portfolio Section -->
-
-
+    </section>
 
 
     <!-- Team Section -->
-    <section id="team" class="team section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span>Unser Team</span>
-        <h2>Team</h2>
-        <p></p>
-      </div><!-- End Section Title -->
-
+    <section id="team" class="section-team section">
       <div class="container">
 
-        <div class="row gy-5">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-label">Unser Team</span>
+          <h2>Team</h2>
+        </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <div class="member-info">
-                <h4>Rene Kraxner</h4>
-                <span>Geschäftsführer</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+        <div class="team-grid">
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <div class="member-info">
-                <h4>Sandra Adam</h4>
-                <span>Büro</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+          <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-avatar"><i class="bi bi-person"></i></div>
+            <h4>Rene Kraxner</h4>
+            <span>Geschäftsführer</span>
+          </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <div class="member-info">
-                <h4>Unser Team</h4>
-                <span>Unsere geschätzten Mitarbeiter</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+          <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-avatar"><i class="bi bi-person"></i></div>
+            <h4>Sandra Adam</h4>
+            <span>Büro</span>
+          </div>
+
+          <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-avatar"><i class="bi bi-people"></i></div>
+            <h4>Unser Team</h4>
+            <span>Unsere geschätzten Mitarbeiter</span>
+          </div>
 
         </div>
 
       </div>
+    </section>
 
-    </section><!-- /Team Section -->
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq section">
+    <section id="faq" class="section-faq section">
+      <div class="container">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span>Häufige Fragen</span>
-        <h2>FAQ</h2>
-        <p>Antworten auf die häufigsten Fragen unserer Kunden.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="accordion" id="faqAccordion">
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="accordion-header" id="faqHeading1">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
-                    Was kostet eine Photovoltaikanlage?
-                  </button>
-                </h3>
-                <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body">
-                    Die Kosten für eine Photovoltaikanlage hängen von der Größe, dem gewählten System und den örtlichen
-                    Gegebenheiten ab. Für ein typisches Einfamilienhaus in der Steiermark rechnet man mit ca. 10–20 kWp
-                    Leistung. Wir erstellen Ihnen gerne ein individuelles, unverbindliches Angebot. Kontaktieren Sie uns
-                    für eine kostenlose Erstberatung!
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="accordion-header" id="faqHeading2">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                    Welche Förderungen gibt es für Photovoltaik in der Steiermark?
-                  </button>
-                </h3>
-                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body">
-                    In Österreich gibt es mehrere Fördermöglichkeiten: Die bundesweite EAG-Investförderung, den Klima-
-                    und Energiefonds sowie Landesförderungen der Steiermark. Wir beraten Sie gerne zu den aktuellen
-                    Fördermöglichkeiten und unterstützen Sie beim Antragsprozess.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="accordion-header" id="faqHeading3">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-                    Wie lange dauert eine komplette Elektroinstallation im Neubau?
-                  </button>
-                </h3>
-                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body">
-                    Die Dauer einer Elektroinstallation im Neubau hängt von der Größe des Objekts und dem Umfang der
-                    gewünschten Ausstattung ab. Für ein Einfamilienhaus planen wir in der Regel 2–4 Wochen ein,
-                    aufgeteilt in Rohinstallation und Fertigstellung. Smart-Home-Systeme können den Zeitrahmen je nach
-                    Komplexität erweitern.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="accordion-header" id="faqHeading4">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-                    Bietet ihr auch Smart Home Nachrüstungen für Altbauten an?
-                  </button>
-                </h3>
-                <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body">
-                    Ja! Moderne Smart-Home-Systeme lassen sich auch in Altbauten nachrüsten, oft sogar ohne große
-                    bauliche Maßnahmen. Mit Funkbasierten Lösungen können Beleuchtung, Heizung, Rollläden und
-                    Sicherheitssysteme intelligent vernetzt werden. Wir beraten Sie gerne zu den Möglichkeiten für Ihr
-                    Zuhause.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
-                <h3 class="accordion-header" id="faqHeading5">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
-                    In welchem Gebiet seid ihr tätig?
-                  </button>
-                </h3>
-                <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body">
-                    Unser Firmensitz ist in St. Radegund bei Graz. Wir sind in ganz Graz und Graz-Umgebung sowie in der
-                    gesamten Steiermark für Sie im Einsatz. Ob Neubau, Sanierung oder Photovoltaik-Installation –
-                    kontaktieren Sie uns und wir finden gemeinsam eine Lösung.
-                  </div>
-                </div>
-              </div>
-
-            </div><!-- End Accordion -->
-          </div>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-label">Häufige Fragen</span>
+          <h2>FAQ</h2>
+          <p>Antworten auf die häufigsten Fragen unserer Kunden.</p>
         </div>
-      </div>
 
-    </section><!-- /FAQ Section -->
+        <div class="faq-container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="faq-item active">
+            <button class="faq-question" aria-expanded="true">
+              <span>Was kostet eine Photovoltaikanlage?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Die Kosten für eine Photovoltaikanlage hängen von der Größe, dem gewählten System und den örtlichen
+                Gegebenheiten ab. Für ein typisches Einfamilienhaus in der Steiermark rechnet man mit ca. 10–20 kWp
+                Leistung. Wir erstellen Ihnen gerne ein individuelles, unverbindliches Angebot. Kontaktieren Sie uns
+                für eine kostenlose Erstberatung!
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Welche Förderungen gibt es für Photovoltaik in der Steiermark?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                In Österreich gibt es mehrere Fördermöglichkeiten: Die bundesweite EAG-Investförderung, den Klima-
+                und Energiefonds sowie Landesförderungen der Steiermark. Wir beraten Sie gerne zu den aktuellen
+                Fördermöglichkeiten und unterstützen Sie beim Antragsprozess.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Wie lange dauert eine komplette Elektroinstallation im Neubau?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Die Dauer einer Elektroinstallation im Neubau hängt von der Größe des Objekts und dem Umfang der
+                gewünschten Ausstattung ab. Für ein Einfamilienhaus planen wir in der Regel 2–4 Wochen ein,
+                aufgeteilt in Rohinstallation und Fertigstellung. Smart-Home-Systeme können den Zeitrahmen je nach
+                Komplexität erweitern.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Bietet ihr auch Smart Home Nachrüstungen für Altbauten an?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Ja! Moderne Smart-Home-Systeme lassen sich auch in Altbauten nachrüsten, oft sogar ohne große
+                bauliche Maßnahmen. Mit Funkbasierten Lösungen können Beleuchtung, Heizung, Rollläden und
+                Sicherheitssysteme intelligent vernetzt werden. Wir beraten Sie gerne zu den Möglichkeiten für Ihr
+                Zuhause.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>In welchem Gebiet seid ihr tätig?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Unser Firmensitz ist in St. Radegund bei Graz. Wir sind in ganz Graz und Graz-Umgebung sowie in der
+                gesamten Steiermark für Sie im Einsatz. Ob Neubau, Sanierung oder Photovoltaik-Installation –
+                kontaktieren Sie uns und wir finden gemeinsam eine Lösung.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="section-contact section">
+      <div class="container">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span>Kontaktiere uns</span>
-        <h2>Kontakt</h2>
-        <p>Wir freuen uns auf Ihre Nachricht.</p>
-      </div><!-- End Section Title -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-label">Kontaktiere uns</span>
+          <h2>Kontakt</h2>
+          <p>Wir freuen uns auf Ihre Nachricht.</p>
+        </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-wrapper" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+          <div class="contact-info-grid">
+            <div class="contact-info-card">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Adresse</h3>
+              <p>Grazer Straße 63, 8061 St. Radegund bei Graz</p>
+            </div>
 
+            <div class="contact-info-card">
+              <i class="bi bi-telephone"></i>
+              <h3>Telefon</h3>
+              <p><a href="tel:+436644120512">0664 4120512</a></p>
+            </div>
 
+            <div class="contact-info-card">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:office@et-sl.at">office@et-sl.at</a></p>
+            </div>
+          </div>
 
-          <div class="info-wrap">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Adresse</h3>
-                <p>Grazer Straße 63, 8061 St. Radegund bei Graz</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Telefon</h3>
-                <p><a href="tel:+436644120512">0664 4120512</a></p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email</h3>
-                <p><a href="mailto:office@et-sl.at">office@et-sl.at</a></p>
-              </div>
-            </div><!-- End Info Item -->
-
+          <div class="contact-map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.3729642319904!2d15.503659776747048!3d47.166913018235995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e481eaa8702b9%3A0xd60521ae2221d31c!2sElektrotechnik%20Sch%C3%B6cklland%20ET-SL%20GmbH!5e1!3m2!1sde!2sat!4v1738058871746!5m2!1sde!2sat"
-              frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy"
+              allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Google Maps Standort – Elektrotechnik Schöcklland, Grazer Straße 63, St. Radegund bei Graz"></iframe>
-
-
-
-
           </div>
 
         </div>
 
-    </section><!-- /Contact Section -->
+      </div>
+    </section>
 
   </main>
 
-  <footer id="footer" class="footer">
 
+  <!-- ==================== Footer ==================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
 
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">ET-SL GmbH</span>
-          </a>
-          <div class="footer-contact pt-3">
+        <div class="footer-about">
+          <a href="index.html" class="footer-brand">ET-SL GmbH</a>
+          <div class="footer-contact-info">
             <p>Grazer Straße 63</p>
             <p>8061 St. Radegund bei Graz</p>
-            <p class="mt-3"><strong>Telefon:</strong> <span><a href="tel:+436644120512">0664 4120512</a></span></p>
-            <p><strong>Email:</strong> <span><a href="mailto:office@et-sl.at">office@et-sl.at</a></span></p>
+            <p style="margin-top: 12px;"><strong>Telefon:</strong> <a href="tel:+436644120512">0664 4120512</a></p>
+            <p><strong>Email:</strong> <a href="mailto:office@et-sl.at">office@et-sl.at</a></p>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
+        <div class="footer-links">
           <h4>Wissenswertes</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="impressum.html">Impressum</a></li>
@@ -580,58 +577,42 @@
           </ul>
         </div>
 
+      </div>
 
-
-
+      <div class="footer-bottom">
+        <p>© 2026 <strong>ET-SL GmbH</strong> – Alle Rechte vorbehalten.</p>
+        <div class="murix-credits">
+          Made by <a href="https://murix.at" target="_blank">Murix.at</a>
+        </div>
       </div>
     </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© 2026 <strong class="px-1 sitename">ET-SL GmbH</strong> – Alle Rechte vorbehalten.</p>
-      <div class="murix-credits">
-        Made by <a href="https://murix.at" target="_blank">Murix.at</a>
-      </div>
-    </div>
-
   </footer>
 
+
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top" aria-label="Nach oben scrollen">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Scripts -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
   <!-- Cookie Consent Banner -->
-  <div id="cookie-consent"
-    style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:99999; background:rgba(30,30,30,0.97); color:#fff; padding:18px 24px; font-size:14px; line-height:1.6; box-shadow:0 -2px 16px rgba(0,0,0,0.2); backdrop-filter:blur(8px);">
-    <div
-      style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-      <div style="flex:1; min-width:280px;">
-        <strong>🍪 Cookie-Hinweis</strong><br>
+  <div id="cookie-consent" class="cookie-consent">
+    <div class="cookie-consent-inner">
+      <div class="cookie-consent-text">
+        <strong>Cookie-Hinweis</strong><br>
         Diese Website verwendet Cookies und lädt externe Dienste (Google Maps) für die bestmögliche Nutzererfahrung.
-        Mehr dazu in unserer <a href="datenschutz.html"
-          style="color:#10bc69; text-decoration:underline;">Datenschutzerklärung</a>.
+        Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
       </div>
-      <div style="display:flex; gap:10px; flex-shrink:0;">
-        <button onclick="acceptCookies()"
-          style="background:#10bc69; color:#fff; border:none; padding:10px 24px; border-radius:50px; cursor:pointer; font-size:14px; font-weight:600; transition:background 0.3s;">Akzeptieren</button>
-        <button onclick="declineCookies()"
-          style="background:transparent; color:#ccc; border:1px solid #555; padding:10px 20px; border-radius:50px; cursor:pointer; font-size:14px; transition:all 0.3s;">Nur
-          notwendige</button>
+      <div class="cookie-consent-actions">
+        <button onclick="acceptCookies()" class="cookie-btn cookie-btn-accept">Akzeptieren</button>
+        <button onclick="declineCookies()" class="cookie-btn cookie-btn-decline">Nur notwendige</button>
       </div>
     </div>
   </div>
@@ -644,16 +625,14 @@
     function declineCookies() {
       localStorage.setItem('cookie-consent', 'declined');
       document.getElementById('cookie-consent').style.display = 'none';
-      // Remove Google Maps iframe if declined
       var maps = document.querySelectorAll('iframe[src*="google.com/maps"]');
       maps.forEach(function (m) {
-        var notice = document.createElement('p');
-        notice.style.cssText = 'text-align:center; padding:40px 20px; background:#f5f5f5; color:#666; border-radius:8px;';
-        notice.innerHTML = '<i class="bi bi-geo-alt"></i> Karte deaktiviert. <a href="https://maps.google.com/?q=Grazer+Stra%C3%9Fe+63+8061+St.+Radegund" target="_blank" rel="noopener" style="color:#10bc69;">In Google Maps öffnen</a>';
+        var notice = document.createElement('div');
+        notice.className = 'map-disabled';
+        notice.innerHTML = '<i class="bi bi-geo-alt"></i> Karte deaktiviert. <a href="https://maps.google.com/?q=Grazer+Stra%C3%9Fe+63+8061+St.+Radegund" target="_blank" rel="noopener">In Google Maps öffnen</a>';
         m.parentNode.replaceChild(notice, m);
       });
     }
-    // Show banner if no consent given yet
     if (!localStorage.getItem('cookie-consent')) {
       document.getElementById('cookie-consent').style.display = 'block';
     } else if (localStorage.getItem('cookie-consent') === 'declined') {
