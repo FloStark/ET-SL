@@ -508,8 +508,18 @@ p:last-child {
   background: var(--color-bg-alt);
 }
 
+.mobile-nav-close {
+  display: none;
+}
+
 /* Mobile Navigation */
 @media (max-width: 1024px) {
+  .site-header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transition: all var(--transition-slow);
+  }
+
   .main-nav {
     position: fixed;
     inset: 0;
