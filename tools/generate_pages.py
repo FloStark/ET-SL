@@ -1,9 +1,7 @@
 import os
 
-# WARNING: This script is currently OUTDATED and does not include the 
-# SEO and Accessibility improvements (Local Fonts, Skip-Links, Breadcrumbs, etc.).
-# Running this script will OVERWRITE the current optimized HTML files.
-# Please update the templates below before using this script.
+# This script matches the SEO and Accessibility improvements 
+# (Local Fonts, Skip-Links, Breadcrumbs, JSON-LD, Internal Linking).
 
 template_top = """<!DOCTYPE html>
 <html lang="de">
@@ -13,6 +11,8 @@ template_top = """<!DOCTYPE html>
   <title>{TITLE} | Elektrotechnik Schöcklland ET-SL GmbH</title>
   <meta name="description" content="{DESC}">
   <meta name="keywords" content="{KEYWORDS}">
+
+  <meta name="google-site-verification" content="0B6TFXYVNonPg6ZPElsI6da4UFmIbH6pGzhy94DIIcs" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://et-sl.at/{FILENAME}">
@@ -26,9 +26,6 @@ template_top = """<!DOCTYPE html>
   <meta property="og:locale" content="de_AT">
 
   <link href="assets/img/favicon.ico" rel="icon">
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
@@ -38,18 +35,39 @@ template_top = """<!DOCTYPE html>
   <script type="application/ld+json">
   {{
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "{TITLE}",
-    "description": "{DESC}",
-    "publisher": {{
-      "@type": "Electrician",
-      "name": "Elektrotechnik Schöcklland - ET-SL GmbH",
-      "logo": "https://et-sl.at/assets/img/Logo_final.svg"
-    }}
+    "@graph": [
+      {{
+        "@type": "WebPage",
+        "name": "{TITLE}",
+        "publisher": {{
+          "@type": "Electrician",
+          "name": "Elektrotechnik Schöcklland - ET-SL GmbH",
+          "logo": "https://et-sl.at/assets/img/Logo_final.svg"
+        }}
+      }},
+      {{
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://et-sl.at/"
+          }},
+          {{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{BREADCRUMB}",
+            "item": "https://et-sl.at/{{FILENAME}}"
+          }}
+        ]
+      }}
+    ]
   }}
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
   <!-- ==================== Header ==================== -->
   <header class="site-header" id="header">
     <div class="container">
@@ -85,8 +103,19 @@ template_top = """<!DOCTYPE html>
       </button>
     </div>
   </header>
+  <!-- Visual Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Startseite</a>
+        <span class="separator"><i class="bi bi-chevron-right"></i></span>
+        <span class="current">{BREADCRUMB}</span>
+      </div>
+    </div>
+  </nav>
+
   <!-- ==================== Main Content ==================== -->
-  <main>
+  <main id="main-content">
 """
 
 template_bottom = """
@@ -197,6 +226,27 @@ pages = {
         </div>
       </div>
     </section>
+
+    <section class="section section-alt" style="background: var(--color-bg-alt); padding: var(--space-3xl) 0;">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Weitere Leistungen</h2>
+          <p>Entdecken Sie unser gesamtes Portfolio für Ihr Zuhause.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);" data-aos="fade-up" data-aos-delay="100">
+          <a href="elektroinstallation.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-plug" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">Elektroinstallation</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Vom Neubau bis zur Sanierung – wir kümmern uns um Ihre Elektrik.</p>
+          </a>
+          <a href="e-mobilitaet.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-ev-front" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">E-Mobilität</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Sicher und schnell zu Hause laden mit der passenden Wallbox.</p>
+          </a>
+        </div>
+      </div>
+    </section>
 """
     },
     "elektroinstallation.html": {
@@ -239,6 +289,27 @@ pages = {
         </div>
       </div>
     </section>
+
+    <section class="section section-alt" style="background: var(--color-bg-alt); padding: var(--space-3xl) 0;">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Weitere Leistungen</h2>
+          <p>Entdecken Sie unser gesamtes Portfolio für Ihr Zuhause.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);" data-aos="fade-up" data-aos-delay="100">
+          <a href="photovoltaik.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-sun" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">Photovoltaik</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Maßgeschneiderte Solaranlagen und Stromspeicher für Ihre Unabhängigkeit.</p>
+          </a>
+          <a href="e-mobilitaet.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-ev-front" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">E-Mobilität</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Sicher und schnell zu Hause laden mit der passenden Wallbox.</p>
+          </a>
+        </div>
+      </div>
+    </section>
 """
     },
     "e-mobilitaet.html": {
@@ -261,12 +332,33 @@ pages = {
             <li><i class="bi bi-chevron-right" style="color: var(--color-primary); margin-right: 10px;"></i><strong>Heimische Wallboxen:</strong> Kompakte und leistungsstarke 11 kW oder 22 kW AC-Ladestationen für Garage und Carport.</li>
             <li><i class="bi bi-chevron-right" style="color: var(--color-primary); margin-right: 10px;"></i><strong>PV-Überschussladen:</strong> Kopplung der Wallbox mit Ihrer Photovoltaikanlage, sodass nur der gratis überschüssige Sonnenstrom getankt wird.</li>
             <li><i class="bi bi-chevron-right" style="color: var(--color-primary); margin-right: 10px;"></i><strong>Lastmanagement für Wohnanlagen:</strong> Damit beim gleichzeitigen Laden mehrerer E-Autos in Tiefgaragen der Netzanschluss nicht überlastet wird.</li>
-            <li><i class="bi bi-chevron-right" style="color: var(--color-primary); margin-right: 10px;"></i><strong>KfW / KPC Förderungsberatung:</strong> Unterstützung bei der Einreichung von staatlichen Förderzuschüssen für Ladeinfrastruktur.</li>
+            <li><i class="bi bi-chevron-right" style="color: var(--color-primary); margin-right: 10px;"></i><strong>Förderberatung:</strong> Unterstützung bei der Einreichung von staatlichen Förderzuschüssen für Ladeinfrastruktur in der Steiermark.</li>
           </ul>
           
           <div style="margin-top: var(--space-2xl); text-align: center;">
             <a href="index.html#contact" class="btn btn-primary btn-lg">Wallbox Angebot einholen</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" style="background: var(--color-bg-alt); padding: var(--space-3xl) 0;">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Weitere Leistungen</h2>
+          <p>Entdecken Sie unser gesamtes Portfolio für Ihr Zuhause.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);" data-aos="fade-up" data-aos-delay="100">
+          <a href="photovoltaik.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-sun" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">Photovoltaik</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Maßgeschneiderte Solaranlagen und Stromspeicher für Ihre Unabhängigkeit.</p>
+          </a>
+          <a href="elektroinstallation.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-plug" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">Elektroinstallation</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Vom Neubau bis zur Sanierung – wir kümmern uns um Ihre Elektrik.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -314,6 +406,27 @@ pages = {
               Bewerbung an office@et-sl.at
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" style="background: var(--color-bg-alt); padding: var(--space-3xl) 0;">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Was wir tun</h2>
+          <p>Ein Einblick in unsere tägliche Arbeit.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);" data-aos="fade-up" data-aos-delay="100">
+          <a href="photovoltaik.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-sun" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">Photovoltaik</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Installation von modernen Solaranlagen.</p>
+          </a>
+          <a href="elektroinstallation.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-plug" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">Elektroinstallation</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Klassisches Handwerk und Smart Home.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -369,12 +482,44 @@ pages = {
         </div>
       </div>
     </section>
+
+    <section class="section section-alt" style="background: var(--color-bg-alt); padding: var(--space-3xl) 0;">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Unsere Kompetenzen</h2>
+          <p>Erfahren Sie mehr über unsere Fachbereiche.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);" data-aos="fade-up" data-aos-delay="100">
+          <a href="photovoltaik.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-sun" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">Photovoltaik</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Sonne nutzen – Strom sparen.</p>
+          </a>
+          <a href="elektroinstallation.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-plug" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">Elektroinstallation</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Moderne Technik für Ihr Haus.</p>
+          </a>
+          <a href="e-mobilitaet.html" class="service-card-mini" style="background: var(--color-white); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center; transition: all 0.3s ease;">
+            <i class="bi bi-ev-front" style="font-size: 32px; color: var(--color-primary); margin-bottom: 15px; display: block;"></i>
+            <h4 style="margin-bottom: 10px;">E-Mobilität</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-muted);">Sicher laden zu Hause.</p>
+          </a>
+        </div>
+      </div>
+    </section>
 """
     }
 }
 
 for filename, data in pages.items():
-    html_content = template_top.format(FILENAME=filename, TITLE=data["title"], DESC=data["desc"], KEYWORDS=data["keywords"])
+    html_content = template_top.format(
+        FILENAME=filename, 
+        TITLE=data["title"], 
+        DESC=data["desc"], 
+        KEYWORDS=data["keywords"],
+        BREADCRUMB=data.get("breadcrumb", data["title"].split("|")[0].strip())
+    )
     html_content += data["content"]
     html_content += template_bottom
     
