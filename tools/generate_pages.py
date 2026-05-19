@@ -58,7 +58,7 @@ template_top = """<!DOCTYPE html>
             "@type": "ListItem",
             "position": 2,
             "name": "{BREADCRUMB}",
-            "item": "https://et-sl.at/{{FILENAME}}"
+            "item": "https://et-sl.at/{FILENAME}"
           }}
         ]
       }}
